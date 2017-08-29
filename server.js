@@ -16,6 +16,10 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride("_method"));
 
+//the css and image
+app.use(express.static(path.join(__dirname, "/public")));
+
+
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
